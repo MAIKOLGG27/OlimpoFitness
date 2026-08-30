@@ -1,0 +1,138 @@
+body{
+    margin: 0;
+    font-family: Arial,sans-serif;
+    background-color: #130e0e;
+    overflow-x: hidden;
+}
+
+/* BARRA PRINCIPAL */
+.contenedor-botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 15px 30px;
+    background-color: rgb(19, 14, 14); 
+    flex-wrap: wrap;
+}
+
+.boton-texto {
+    background: none;
+    border: none;
+    padding: 5px;
+    font: Arial;
+    font-size: 18px;
+    color: #a7a7a7;
+    cursor: pointer;
+    z-index: 2;
+
+}
+
+.boton-texto:hover {
+  color: #ffffff;
+  transition: color .3s ease;
+  text-decoration: underline;
+}   
+
+.logo{
+    height: auto;
+    width: 100px;
+    max-width: 100%;
+}
+
+/* FOTO PRINCIPAL */
+
+.contenedor-imagenes{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.imagen-fondo{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.centralizador{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    gap: 15px;
+    padding: 20px;
+    
+    box-sizing: border-box;
+}
+
+.titulo-pagina{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(7, 7, 7);
+    color: rgb(255, 255, 255);
+    font-size: 7vw;
+    font-weight: bold;
+    text-shadow: 4px 4px 8px rgba(7, 7, 7, 0.8);
+    text-align: center;
+    margin: 0;
+
+}
+
+.sub-titulo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: rgb(7, 7, 7);
+
+    color: white;
+    font-size: 3vw;
+    font-weight: bold;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+    margin: 0;
+    text-align: center;
+}
+
+.boton-img{
+    background: rgb(34, 34, 34);
+    border: none;
+    padding: 10px 25px;
+    font-size: 20px;
+    border-radius: 8px;
+
+    color: rgb(255, 255, 255);
+    font-size: 2vw;
+    font-weight: bold;
+    text-shadow: 4px 4px 8px rgba(17, 16, 16, 0.8);
+
+    cursor: pointer;
+    z-index: 2;
+    margin-top: 10px;
+}
+
+.boton-img:hover {
+  color: #e9c009;
+  transition: color .3s ease;
+}   
