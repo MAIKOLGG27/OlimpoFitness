@@ -5,6 +5,10 @@ body{
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* BARRA PRINCIPAL */
 .contenedor-botones{
     display: flex;
