@@ -140,3 +140,52 @@ a {
   color: #e9c009;
   transition: color .3s ease;
 }   
+
+/* Estilos pagina nosotros*/
+.seccion-nosotros {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+
+.franja{
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: 100px 0;
+  
+  background-color: #ff9800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.titulo-nosotros {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff; 
+  margin-bottom: 25px;
+}
+
+.texto-nosotros {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+.titulo-principal {
+  font-size: 4.0rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff6f6;
+  margin-bottom: 20px;
+}
+
+
+
