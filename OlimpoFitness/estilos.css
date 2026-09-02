@@ -224,3 +224,46 @@ a {
 .btn-crear:hover{
     text-decoration: underline;
 }
+
+/* PAGINA PREGUNTAS FRECUENTES*/
+
+.contenedorfaq{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.contenedor-faq {
+    padding-top: 270px;
+    padding-bottom: 80px;
+}
+
+.faq-item {
+    margin-bottom: 30px;
+}
+
+
+.subsubtitulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2vw;
+    font-weight: bold;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin: 10px 0; 
+}
+
+.texto-respuesta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(157, 142, 142);
+    font-size: 1.5vw;
+    font-weight: normal;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin: 0;
+}
