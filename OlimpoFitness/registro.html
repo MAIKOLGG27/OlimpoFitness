@@ -14,16 +14,34 @@
         <a href="planes.html" class="boton-texto"> PLANES </a>
         <a href="planes.html" class="boton-texto"> SOBRE NOSOTROS </a>
         <button class="boton-texto">INICIO</button>
-        <a href="registro.html" class="boton-texto"> INICIAR SESIÓN </a>
+        <a href="login.html" class="boton-texto"> INICIAR SESIÓN </a>
     </nav>
 
-    <div class="contenedor-is">
-        <div class="inicio-sesion">
-            <label for="nombre">Nombre:</label>
-            <input class="camp-texto" type="text" id="nombre-completo" name="nombre" placeholder="Ingrese su nombre completo">
 
+    <div class="contenedor-login">
+        <div class="cuadro-login">
+            <h2>REGISTRAR CUENTA</h2>
+            
+            <form>
 
-        </div>
+                <input type="text" class="campo-texto" placeholder="Ingrese su correo">
+                <input type="text" class="campo-texto" placeholder="Ingrese su nombre completo">
+
+                <input type="password" class="campo-texto" placeholder="Ingrese su contraseña">
+                <input type="password" class="campo-texto" placeholder="Confirme su contraseña">
+                
+                <a href="login.html" class="boton-entrar">CREAR CUENTA</a> 
+
+                <p class="texto-registro">
+                    <!-- esto queda vacio porque se configura con java segun el output 
+                        EMAIL EN USO, NO VALIDO, ETC
+                        CONTRASEÑAS NO COINCIDEN, MUY CORTAS, ETC
+                        CUENTA CREADA CON EXITO
+                    -->
+                </p>
+
+            </form>
     </div>
+</div>
 </head>
 </html>

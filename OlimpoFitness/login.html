@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 
-
 <html lang="es">
 <head>
-    
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-
-</head>
-
-<body>
 
     <!-- Zona de barra principal, con botones -->
 
@@ -24,17 +18,24 @@
     </nav>
 
 
-    <!-- Imagen principal del gimnasio -->
-    <div class="contenedor-imagen">
-        <img src="Imagenes/ImagenPortada.jpeg" class="imagen-fondo">
-        <div class="centralizador">
-            <h1 class="titulo-pagina">OLIMPO FITNESS</h1>
-            <h1 class="sub-titulo">CONOCE MÁS SOBRE NOSOTROS</h1>
-            <a href="planes.html" class="boton-img"> CONOCE NUESTROS PLANES </a>
-        </div>
+    <div class="contenedor-login">
+        <div class="cuadro-login">
+            <h2>INICIAR SESIÓN</h2>
+            
+            <form>
+
+                <input type="text" class="campo-texto" placeholder="Ingrese su correo">
+
+                <input type="password" class="campo-texto" placeholder="Ingrese su contraseña">
+                
+                <button type="submit" class="boton-entrar">INICIAR SESION</button>
+
+                
+                <p class="texto-registro">
+                    ¿No tienes cuenta? <a href="registro.html" class="btn-crear">Crear cuenta</a> 
+                </p>
+            </form>
     </div>
-    
-
-</body>
-
+</div>
+</head>
 </html>
