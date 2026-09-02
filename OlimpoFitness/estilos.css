@@ -267,3 +267,178 @@ a {
     text-align: center;
     margin: 0;
 }
+}
+
+/*               (^///^)        */
+/*       SECCIÓN DE PLANES (planes.html)     */
+
+/* Contenedor general que ordena las 4 cajas */
+.contenedor-planes {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    flex-wrap: wrap;         
+    gap: 30px;
+    padding: 60px 20px;
+    background-color: #130e0e; 
+    
+   
+    width: 100vw;            
+    min-height: 80vh;        
+    box-sizing: border-box;  
+    margin: 0 auto;
+}
+
+
+.tarjeta-plan {
+    background-color: #1e1e1e; 
+    border-top: 5px solid #e9c009; 
+    border-radius: 12px;
+    padding: 30px 20px;
+    width: 240px; 
+    text-align: center;
+    color: white; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+    
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 480px; 
+}
+
+
+.tarjeta-plan:hover {
+    transform: translateY(-10px);
+    border-top-color: white;
+}
+
+
+.titulo-plan {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    font-style: italic; 
+}
+
+.precio-plan {
+    font-size: 32px;
+    margin: 0;
+}
+
+.detalle-mes {
+    font-size: 16px;
+    color: #a7a7a7; 
+}
+
+.texto-ahorro {
+    font-size: 14px;
+    color: #e9c009;
+    margin: 5px 0 20px 0;
+}
+
+
+.etiqueta-destacado {
+    background-color: #e9c009;
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.etiqueta-beneficios {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 10px auto 20px auto;
+    display: inline-block;
+}
+
+
+.lista-beneficios {
+    list-style: none; 
+    padding: 0;
+    margin: 0 0 30px 0;
+    flex-grow: 1; 
+}
+
+.lista-beneficios li {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+
+.boton-verde {
+    background-color: #129b3a; 
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-verde:hover {
+    background-color: #0e7a2d; 
+}
+
+
+/* ========================================= */
+/*       TÍTULO GRANDE DE PLANES             */
+/* ========================================= */
+
+.encabezado-planes {
+    text-align: center;
+    padding: 50px 20px 10px 20px;
+    background-color: #130e0e; 
+    color: white;
+}
+
+.titulo-principal-planes {
+    font-size: 55px;                         
+    font-style: italic;   
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 2px; 
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+.subtitulo-sedes {
+    font-size: 22px;
+    font-style: italic;
+    margin: 15px 0 30px 0;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.texto-resalte {
+    color: #e9c009; 
+    font-weight: bold;
+}
+
+.texto-multisede {
+    font-size: 24px;
+    font-style: italic;
+    margin: 0;
+    color: #a7a7a7; 
+    font-weight: normal;
+}
+
+.destacado-blanco {
+    font-size: 45px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+
+/*      (┬┬﹏┬┬)    */
+/* TERMINA SECCIÓN DE PLANES (planes.html) */
