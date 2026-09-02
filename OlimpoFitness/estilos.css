@@ -141,7 +141,7 @@ a {
   transition: color .3s ease;
 }   
 
-/* Estilos pagina nosotros*/
+/* ESTILOS PAGINA NOSOTROS*/
 .seccion-nosotros {
   max-width: 900px;
   margin: 60px auto;
@@ -150,14 +150,13 @@ a {
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-
 .franja{
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   padding: 100px 0;
   
-  background-color: #ff9800;
+  background-color: #e9c009;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -179,13 +178,113 @@ a {
   font-weight: 400;
 }
 .titulo-principal {
-  font-size: 4.0rem;
+  font-size: 4vw;
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff6f6;
+  margin-bottom: 35px;
+}
+.seccion-mision-vision {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.titulo-vm {
+  color: #ffffff;            
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
+.texto-vm {
+  color: #e0e0e0;            
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.banner-instagram {
+  width: 100%;
+  background-color: #000000;
+  padding: 40px 20px;
+  text-align: center;
+}
 
+.link-instagram {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.link-instagram:hover {
+  transform: scale(1.05); 
+}
+
+.icono-instagram {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;      
+  border-radius: 50%;      
+  margin-bottom: 12px;
+}
+
+.titulo-ig {
+  color: #ffffff;         
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin: 0;
+}
+
+.usuario-ig {
+  display: block;
+  color: #e9c009;         
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 6px;
+}
+
+
+.contenedor-botones {
+  display: flex;
+  align-items: center;
+  background-color: #000000;
+  height: 90px;             
+  padding: 0 20px;
+}
+
+
+.logo {
+  height: 70px;            
+  width: auto;           
+  margin-right: 30px;
+}
+
+
+.boton-texto {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.boton-texto:hover {
+  background-color: #e9c009;
+  color: #ffffff;
+}
 
