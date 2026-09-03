@@ -1,47 +1,51 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Olimpo Fitness</title>
     <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
 
     <!-- Zona de barra principal, con botones -->
-
-
     <nav class="contenedor-botones">
         <img src="Imagenes/logo-blanco.png" alt="Logo gimnasio" class="logo">
 
         <a href="index.html" class="boton-texto"> INICIO </a>
         <a href="planes.html" class="boton-texto"> PLANES </a>
-        <a href="planes.html" class="boton-texto"> SOBRE NOSOTROS </a>
+        <a href="nosotros.html" class="boton-texto"> SOBRE NOSOTROS </a>
         <a href="faq.html" class="boton-texto"> PREGUNTAS FRECUENTES </a>
-        <a href="login.html" class="boton-texto"> INICIAR SESIÓN </a>
+        
+        <!-- Botones con ID para que el JS los controle -->
+        <a href="login.html" class="boton-texto" id="link-login" style="color: #ffffff; text-decoration: underline;"> INICIAR SESIÓN </a>
+        <a href="perfil.html" class="boton-texto" id="link-perfil" style="display: none;"> MI PERFIL </a>
+        <a href="#" class="boton-texto" id="link-logout" style="display: none; color: #ff4d4d;"> CERRAR SESIÓN </a>
     </nav>
 
+    <!-- Contenedor del Registro -->
     <div class="contenedor-login">
         <div class="cuadro-login">
             <h2>REGISTRAR CUENTA</h2>
             
-            <form>
-
-                <input type="text" class="campo-texto" placeholder="Ingrese su correo">
-                <input type="text" class="campo-texto" placeholder="Ingrese su nombre completo">
-
-                <input type="password" class="campo-texto" placeholder="Ingrese su contraseña">
-                <input type="password" class="campo-texto" placeholder="Confirme su contraseña">
+            <form onsubmit="registrarCuenta(event)">
+                <input type="email" id="reg-correo" class="campo-texto" placeholder="Ingrese su correo" required>
+                <input type="text" id="reg-nombre" class="campo-texto" placeholder="Ingrese su nombre completo" required>
+                <input type="password" id="reg-clave1" class="campo-texto" placeholder="Ingrese su contraseña" required>
+                <input type="password" id="reg-clave2" class="campo-texto" placeholder="Confirme su contraseña" required>
                 
-                <a href="login.html" class="boton-entrar">CREAR CUENTA</a> 
+                <button type="submit" class="boton-entrar">CREAR CUENTA</button> 
 
+                <!-- Aquí se inyectarán los mensajes de error desde script.js -->
+                <p class="texto-registro" id="mensaje-error" style="color: #ff4d4d; margin-top: 10px;"></p>
+                
                 <p class="texto-registro">
-                    <!-- esto queda vacio porque se configura con java segun el output 
-                        EMAIL EN USO, NO VALIDO, ETC
-                        CONTRASEÑAS NO COINCIDEN, MUY CORTAS, ETC
-                        CUENTA CREADA CON EXITO
-                    -->
+                    ¿Ya tienes cuenta? <a href="login.html" class="btn-crear">Iniciar sesión</a> 
                 </p>
-
             </form>
+        </div>
     </div>
-</div>
-</head>
+
+    <script src="script.js"></script>
+</body>
 </html>
