@@ -14,20 +14,22 @@
     <!-- Zona de barra principal, con botones -->
 
 
+    <!-- Zona de barra principal, con botones -->
     <nav class="contenedor-botones">
         <img src="Imagenes/logo-blanco.png" alt="Logo gimnasio" class="logo">
 
         <a href="index.html" class="boton-texto"> INICIO </a>
         <a href="planes.html" class="boton-texto"> PLANES </a>
-        <a href="planes.html" class="boton-texto"> SOBRE NOSOTROS </a>
+        <a href="nosotros.html" class="boton-texto"> SOBRE NOSOTROS </a>
         <a href="faq.html" class="boton-texto"> PREGUNTAS FRECUENTES </a>
-        <a href="login.html" class="boton-texto"> INICIAR SESIÓN </a>
+        
+        <!-- Botones con ID para que el JS los controle -->
+        <a href="login.html" class="boton-texto" id="link-login"> INICIAR SESIÓN </a>
+        <a href="perfil.html" class="boton-texto" id="link-perfil" style="display: none;"> MI PERFIL </a>
+        <a href="#" class="boton-texto" id="link-logout" style="display: none; color: #ff4d4d;"> CERRAR SESIÓN </a>
     </nav>
 
-
-    
-
-    <!-- ZONA DEL TÍTULO PRINCIPAL (NUEVO) -->
+    <!-- ZONA DEL TÍTULO PRINCIPAL -->
     <div class="encabezado-planes">
         <h1 class="titulo-principal-planes">PLANES OLIMPO</h1>
         
@@ -40,6 +42,9 @@
             <span class="destacado-blanco">ACCESO MULTISEDE</span>
         </h2>
     </div>
+
+    <!-- AQUÍ EMPIEZAN TUS TARJETAS QUE YA TIENES -->
+    <div class="contenedor-planes">
 
     <!-- AQUÍ EMPIEZAN TUS TARJETAS QUE YA TIENES -->
     <div class="contenedor-planes">
@@ -135,6 +140,7 @@
             <a href="index.html" class="boton-verde">ELEGIR PLAN</a>
         </div>
     </div>
+    <script src="script.js"></script>
 
 </body>
 </html>

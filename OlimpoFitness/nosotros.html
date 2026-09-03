@@ -16,16 +16,16 @@
     <nav class="contenedor-botones">
         <img src="Imagenes/logo-blanco.png" alt="Logo gimnasio" class="logo">
 
-        <button class="boton-texto">INICIO</button>
-    <!-- BOTON DE PLANES -->
+        <a href="index.html" class="boton-texto"> INICIO </a>
         <a href="planes.html" class="boton-texto"> PLANES </a>
-        <button class="boton-texto">INICIO</button>
-    <!-- BOTON DE NOSOTROS -->
         <a href="nosotros.html" class="boton-texto"> SOBRE NOSOTROS </a>
-
-        <button class="boton-texto">INICIO</button>
+        <a href="faq.html" class="boton-texto"> PREGUNTAS FRECUENTES </a>
+        
+        <!-- Botones con ID para que el JS los controle -->
+        <a href="login.html" class="boton-texto" id="link-login"> INICIAR SESIÓN </a>
+        <a href="perfil.html" class="boton-texto" id="link-perfil" style="display: none;"> MI PERFIL </a>
+        <a href="#" class="boton-texto" id="link-logout" style="display: none; color: #ff4d4d;"> CERRAR SESIÓN </a>
     </nav>
-
 
     <section class="seccion-nosotros">
         <div class="franja">
@@ -75,6 +75,8 @@
             </div>
         </a>
     </section>
+    <script src="script.js"></script>
+
 
 </body>
 
