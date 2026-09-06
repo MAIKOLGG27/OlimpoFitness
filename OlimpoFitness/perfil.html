@@ -8,13 +8,9 @@
 </head>
 <body>
 
-    <nav class="contenedor-botones">
-        <img src="Imagenes/logo-blanco.png" alt="Logo gimnasio" class="logo">
-        <a href="index.html" class="boton-texto">INICIO</a>
-        <a href="planes.html" class="boton-texto">PLANES</a>
-        <a href="nosotros.html" class="boton-texto">SOBRE NOSOTROS</a>
-        <a href="perfil.html" class="boton-texto" style="color: #ffffff; text-decoration: underline;">MI PERFIL</a>
-    </nav>
+    <header id="barra-navegacion"></header>
+    <script src="scripts/barraNav.js"></script>
+
 
     <main class="contenedor-perfil">
         
@@ -24,28 +20,18 @@
                 <div class="avatar-usuario">
                     <span>OF</span>
                 </div>
-                <h1 class="nombre-usuario">Vicente Pérez</h1>
-                <span class="badge-estado">Socio Activo</span>
+                <h1 class="nombre-usuario" id="texto-nombre">Vicente Pérez</h1>
+                <span class="badge-estado" id="badgeEstado"></span>
             </div>
 
             <hr class="separador">
 
             <div class="seccion-datos">
-                <h3 class="titulo-seccion">Datos Personales</h3>
+                <h3 class="titulo-seccion">Datos Extra</h3>
                 
                 <div class="fila-dato">
                     <span class="etiqueta-dato">Correo:</span>
-                    <span class="valor-dato">vicente.perez@duocuc.cl</span>
-                </div>
-
-                <div class="fila-dato">
-                    <span class="etiqueta-dato">Teléfono:</span>
-                    <span class="valor-dato">+56 9 1234 5678</span>
-                </div>
-
-                <div class="fila-dato">
-                    <span class="etiqueta-dato">Sede Principal:</span>
-                    <span class="valor-dato">Viña del Mar</span>
+                    <span class="valor-dato" id="texto-correo">vicente.perez@duocuc.cl</span>
                 </div>
             </div>
 
@@ -56,28 +42,22 @@
                 
                 <div class="fila-dato">
                     <span class="etiqueta-dato">Plan:</span>
-                    <span class="valor-dato plan-resaltado">Plan Trimestral</span>
+                    <span class="valor-dato plan-resaltado" id="texto-plan">Plan Trimestral</span>
                 </div>
 
-                <div class="fila-dato">
+                <div class="fila-dato" id="texto-vencimiento-2">
                     <span class="etiqueta-dato">Estado:</span>
-                    <span class="valor-dato estado-al-dia">Al día</span>
+                    <span class="valor-dato estado-al-dia" id="texto-estado">Al día</span>
                 </div>
 
-                <div class="fila-dato">
+                <div class="fila-dato" id="texto-vencimiento">
                     <span class="etiqueta-dato">Vencimiento:</span>
                     <span class="valor-dato">15 de Noviembre, 2026</span>
                 </div>
             </div>
-
-            <div class="acciones-perfil">
-                <a href="index.html" class="boton-accion secundario">Volver</a>
-                <button class="boton-accion primario">Editar Datos</button>
-            </div>
-
         </div>
 
+       <script src="scripts/scriptRegistro.js"></script>
     </main>
-
 </body>
 </html>
