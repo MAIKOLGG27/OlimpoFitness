@@ -1,6 +1,7 @@
 // ==========================================
 // 1. LÓGICA DE REGISTRO
 // ==========================================
+
 function registrarCuenta(event) {
     event.preventDefault(); // Evita que la página se recargue
 
@@ -119,3 +120,45 @@ document.addEventListener('DOMContentLoaded', () => {
         btnLogout.addEventListener('click', cerrarSesion);
     }
 });
+
+
+// Rellenar datos de la tarjeta
+
+function rellenarTarjeta(){
+    const datosUsuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'))
+    const nombre = datosUsuarioLogueado.nombre
+    const correo = datosUsuarioLogueado.correo
+    const plan = datosUsuarioLogueado.plan
+
+    if(document.getElementById('texto-nombre')){
+        document.getElementById('texto-nombre').textContent = nombre
+        document.getElementById('texto-correo').textContent = correo
+        document.getElementById('texto-plan').textContent = plan.toUpperCase()
+
+        if(plan === "Sin Plan Activo"){
+            document.getElementById('badgeEstado').textContent = 'Socio Inactivo'
+            document.getElementById('badgeEstado').style.background = "#e800004b"
+            document.getElementById('badgeEstado').style.border = "1px solid #E80000"
+            document.getElementById('badgeEstado').style.color = "#E80000"
+            
+            document.getElementById('texto-vencimiento').style.visibility = 'hidden'
+            document.getElementById('texto-estado').style.color = "#E80000"
+            document.getElementById('texto-estado').textContent = 'INACTIVO'
+
+        } else {
+            document.getElementById('badgeEstado').textContent = 'Socio Activo'
+            document.getElementById('badgeEstado').style.background = "#129b3a33"
+            document.getElementById('badgeEstado').style.border = "1px solid #129b3a"
+            document.getElementById('badgeEstado').style.color = "#129b3a"
+        }
+    }
+}
+
+if(!localStorage.getItem('sesionOlimpo')){
+    console.log("Sin perfil logueado")
+} else {
+    rellenarTarjeta()
+}
+
+
+

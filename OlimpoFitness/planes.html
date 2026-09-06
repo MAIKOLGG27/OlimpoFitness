@@ -15,19 +15,8 @@
 
 
     <!-- Zona de barra principal, con botones -->
-    <nav class="contenedor-botones">
-        <img src="Imagenes/logo-blanco.png" alt="Logo gimnasio" class="logo">
-
-        <a href="index.html" class="boton-texto"> INICIO </a>
-        <a href="planes.html" class="boton-texto"> PLANES </a>
-        <a href="nosotros.html" class="boton-texto"> SOBRE NOSOTROS </a>
-        <a href="faq.html" class="boton-texto"> PREGUNTAS FRECUENTES </a>
-        
-        <!-- Botones con ID para que el JS los controle -->
-        <a href="login.html" class="boton-texto" id="link-login"> INICIAR SESIÓN </a>
-        <a href="perfil.html" class="boton-texto" id="link-perfil" style="display: none;"> MI PERFIL </a>
-        <a href="#" class="boton-texto" id="link-logout" style="display: none; color: #ff4d4d;"> CERRAR SESIÓN </a>
-    </nav>
+    <header id="barra-navegacion"></header>
+    <script src="scripts/barraNav.js"></script>
 
     <!-- ZONA DEL TÍTULO PRINCIPAL -->
     <div class="encabezado-planes">
@@ -63,7 +52,7 @@
                 <li><strong>SIN CONTRATO</strong></li>
             </ul>
             
-            <a href="index.html" class="boton-verde">ELEGIR PLAN</a>
+            <button class="boton-verde" data-plan="plan-diario">ELEGIR PLAN</button>
         </div>
 
         <!-- Plan 2: Mensual -->
@@ -79,7 +68,7 @@
                 <li><strong>ACCESO ILIMITADO</strong> <br> A CLASES GRUPALES</li>
             </ul>
             
-            <a href="index.html" class="boton-verde">ELEGIR PLAN</a>
+            <button class="boton-verde" data-plan="plan-mensual">ELEGIR PLAN</button>
         </div>
 
         <!-- Plan 3: Trimestral -->
@@ -98,7 +87,7 @@
                 <li><strong>CONGELAMIENTO</strong> <br> HASTA 15 DÍAS</li>
             </ul>
             
-            <a href="index.html" class="boton-verde">ELEGIR PLAN</a>
+            <button class="boton-verde" data-plan="plan-trimestral">ELEGIR PLAN</button>
         </div>
 
         <!-- Plan 4: Semestral-->
@@ -117,7 +106,7 @@
                 <li><strong>CONGELAMIENTO</strong> <br> HASTA 15 DÍAS</li>
             </ul>
             
-            <a href="index.html" class="boton-verde">ELEGIR PLAN</a>
+            <button class="boton-verde" data-plan="plan-semestral">ELEGIR PLAN</button>
         </div>
         
 
@@ -137,10 +126,11 @@
                 <li><strong>POLERA DE REGALO</strong></li>
             </ul>
             
-            <a href="index.html" class="boton-verde">ELEGIR PLAN</a>
+            <button class="boton-verde" data-plan="plan-anual">ELEGIR PLAN</button>
         </div>
     </div>
-    <script src="script.js"></script>
+       <script src="scripts/scriptRegistro.js"></script>
+       <script src="scripts/comprarPlanes.js"></script>
 
 </body>
 </html>

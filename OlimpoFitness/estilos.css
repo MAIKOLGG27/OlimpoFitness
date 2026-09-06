@@ -383,7 +383,7 @@ a {
 
 .contenedor-faq {
     padding-top: 270px;
-    padding-bottom: 80px;
+    padding-bottom: 90px;
 }
 
 .faq-item {
@@ -400,7 +400,7 @@ a {
     font-weight: bold;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
     text-align: center;
-    margin: 10px 0; 
+    margin: 40px 0; 
 }
 
 .texto-respuesta {
@@ -590,10 +590,7 @@ a {
 /*      (┬┬﹏┬┬)    */
 /* TERMINA SECCIÓN DE PLANES (planes.html) */
 
-/* ========================================= */
 /* VISTA DE PERFIL DE USUARIO          */
-/* ========================================= */
-
 .contenedor-perfil {
     display: flex;
     justify-content: center;
@@ -643,7 +640,7 @@ a {
 }
 
 .badge-estado {
-    background-color: rgba(18, 155, 58, 0.2);
+    background-color: #129b3a33;
     color: #129b3a;
     border: 1px solid #129b3a;
     padding: 4px 12px;
@@ -729,5 +726,70 @@ a {
     background-color: #3d3d3d;
 }
 
-/* ========================================= */
-/* FIN DE VISTA DE PERFIL DE USUARIO         */
+/* PROCESAR PAGO */
+.contenedor-pago {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 80vh;
+    background-color: #130e0e;
+    box-sizing: border-box;
+}
+
+.cuadro-pago {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    border-top: 5px solid #e9c009;
+    width: 100%;
+    max-width: 400px;
+    padding: 35px 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.fila-detalle {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.texto-pago{
+    color: #e9c009;
+    font-size: 20px;                           
+    font-weight: bold;
+    margin: 8px;
+    letter-spacing: 1px; 
+    text-transform: uppercase;
+    
+}
+
+.fila-detalle .etiqueta {
+    color: #ffcc00;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.fila-detalle .valor {
+    color: #ffffff;
+    margin-left: 8px;
+    text-transform: uppercase;
+}
+
+.boton-amarillo {
+    background-color: #ffcc00; 
+    color: #1e1e1e; 
+    border: none;
+    border-radius: 8px; 
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%; 
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-amarillo:hover {
+    background-color: #e6b800;
+}
