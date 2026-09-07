@@ -31,7 +31,14 @@ function cargarUsuariosAdmin() {
         tabla.innerHTML += filaNueva;
     });
 }
-
+cargarUsuariosAdmin(); 
 document.addEventListener('DOMContentLoaded', () => {
-    cargarUsuariosAdmin(); 
+    const usuarios = JSON.parse(localStorage.getItem('baseDatosOlimpo')) || [];
+    
+    const usuariosActivos = usuarios.filter(user => user.plan && user.plan !== "Sin Plan Activo");
+    
+    const contador = document.getElementById('contador-usuarios');
+    if (contador) {
+        contador.textContent = usuariosActivos.length;
+    }
 });

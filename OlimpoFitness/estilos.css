@@ -290,12 +290,14 @@ a {
 
 /* INICIO DE SESION*/
 
-.contenedor-login{
+.contenedor-login {
     display: flex;
-    justify-content: center;  
-    align-items: center;  
-    min-height: 100vh;    
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    margin-top: 110px; 
 }
+
 
 .cuadro-login {
   background-color: rgb(31,31,31);
