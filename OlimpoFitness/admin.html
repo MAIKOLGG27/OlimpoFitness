@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Olimpo Fitness</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    
+    <header id="barra-navegacion"></header>
+    <script src="scripts/barraNav.js"></script>
+
+    
+    <main class="contenedor-admin">
+        <h1 class="titulo-admin">Panel de Control General</h1>
+        
+        
+        <div class="tarjetas-resumen">
+            <div class="tarjeta-dato">
+                <h3>Ventas del Día</h3>
+                <p class="numero-grande">$185.000</p>
+            </div>
+            <div class="tarjeta-dato">
+                <h3>Nuevas Matrículas</h3>
+                <p class="numero-grande">12</p>
+            </div>
+            <div class="tarjeta-dato">
+                <h3>Usuarios Activos</h3>
+                <p class="numero-grande">340</p>
+            </div>
+        </div>
+
+        
+        <div class="seccion-tabla">
+            <h2>Gestión de Suscripciones</h2>
+            <table class="tabla-admin">
+                <thead>
+                    <tr>
+                        <th>Nombre Cliente</th>
+                        <th>Correo</th>
+                        <th>Plan Actual</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+               
+                <tbody id="tabla-usuarios">
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    
+    <script src="scripts/scriptAdmin.js"></script>
+</body>
+</html>

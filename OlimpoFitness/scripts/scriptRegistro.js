@@ -3,54 +3,53 @@
 // ==========================================
 
 function registrarCuenta(event) {
-    event.preventDefault(); // Evita que la página se recargue
+    event.preventDefault(); 
 
-    // Capturamos los datos ingresados
     const correo = document.getElementById('reg-correo').value;
     const nombre = document.getElementById('reg-nombre').value;
     const clave1 = document.getElementById('reg-clave1').value;
     const clave2 = document.getElementById('reg-clave2').value;
     const mensajeError = document.getElementById('mensaje-error');
 
-    // Validación 1: Contraseñas coinciden
+    
     if (clave1 !== clave2) {
         mensajeError.textContent = "Las contraseñas no coinciden.";
-        return; // Cortamos la función aquí
+        return; 
     }
 
-    // Validación 2: Contraseña segura (mínimo 6 caracteres)
+    
     if (clave1.length < 6) {
         mensajeError.textContent = "La contraseña debe tener al menos 6 caracteres.";
         return;
     }
 
-    // Traemos los usuarios que ya existan en la memoria (o creamos un arreglo vacío si es el primero)
+    
     let usuariosGuardados = JSON.parse(localStorage.getItem('baseDatosOlimpo')) || [];
 
-    // Validación 3: Que el correo no exista ya
+    
     const existeCorreo = usuariosGuardados.find(user => user.correo === correo);
     if (existeCorreo) {
         mensajeError.textContent = "Este correo ya está registrado. Intenta iniciar sesión.";
         return;
     }
 
-    // Si pasamos todas las validaciones, creamos al usuario
+    
     const nuevoUsuario = {
         nombre: nombre,
         correo: correo,
-        clave: clave1, // En un sistema real esto iría encriptado, pero por ahora sirve
-        plan: "Sin Plan Activo" // Dato extra para mostrar en el perfil después
+        clave: clave1, 
+        plan: "Sin Plan Activo" 
     };
 
-    // Lo metemos a nuestra "base de datos" y guardamos
+    
     usuariosGuardados.push(nuevoUsuario);
     localStorage.setItem('baseDatosOlimpo', JSON.stringify(usuariosGuardados));
 
-    // Mensaje de éxito y limpieza
-    mensajeError.style.color = "#129b3a"; // Cambiamos el texto a verde
+    
+    mensajeError.style.color = "#129b3a"; 
     mensajeError.textContent = "¡Cuenta creada con éxito! Redirigiendo...";
     
-    // Lo mandamos al login después de 1 segundo y medio
+   
     setTimeout(() => {
         window.location.href = 'login.html';
     }, 1500);
@@ -58,7 +57,7 @@ function registrarCuenta(event) {
 
 
 // ==========================================
-// 2. LÓGICA DE LOGIN REAL
+// 2. LÓGICA DE LOGIN REAL Y ADMIN
 // ==========================================
 function iniciarSesion(event) {
     event.preventDefault();
@@ -66,52 +65,77 @@ function iniciarSesion(event) {
     const correoIngresado = document.getElementById('correo-login').value;
     const claveIngresada = document.getElementById('clave-login').value;
 
-    // Traemos la base de datos simulada
+    
+    if (correoIngresado === 'admin@olimpo.cl' && claveIngresada === 'admin123') {
+        localStorage.setItem('sesionOlimpo', 'true');
+        
+        
+        localStorage.setItem('usuarioLogueado', JSON.stringify({ 
+            nombre: 'Administrador Principal', 
+            correo: correoIngresado, 
+            rol: 'admin',
+            plan: 'Dueño del Gimnasio'
+        }));
+
+        window.location.href = 'admin.html'; 
+        return; 
+    }
+
+    // --- LÓGICA DE USUARIO NORMAL ---
+    
     let usuariosGuardados = JSON.parse(localStorage.getItem('baseDatosOlimpo')) || [];
 
-    // Buscamos si hay un usuario que tenga ESE correo y ESA clave
+    
     const usuarioValido = usuariosGuardados.find(user => user.correo === correoIngresado && user.clave === claveIngresada);
 
     if (usuarioValido) {
-        // ¡El usuario existe! Iniciamos sesión
+        
         localStorage.setItem('sesionOlimpo', 'true');
         
-        // GUARDAMOS QUIÉN ENTRÓ (para mostrar su nombre en el perfil después)
+        
         localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioValido));
 
         window.location.href = 'perfil.html';
     } else {
-        // Tiramos una alerta simple si se equivoca
+        
         alert("Correo o contraseña incorrectos. Inténtalo de nuevo.");
     }
 }
 
 
 // ==========================================
-// 3. MANTENER SESIÓN Y CERRAR SESIÓN
+// 3. MANTENER SESIÓN, CERRAR SESIÓN E INICIALIZAR
 // ==========================================
 function revisarSesion() {
     const linkLogin = document.getElementById('link-login');
     const linkPerfil = document.getElementById('link-perfil');
+    const linkAdmin = document.getElementById('link-admin');
     const linkLogout = document.getElementById('link-logout');
 
     const sesionActiva = localStorage.getItem('sesionOlimpo');
+    const usuarioActual = JSON.parse(localStorage.getItem('usuarioLogueado'));
 
-    if (sesionActiva === 'true' && linkLogin && linkPerfil && linkLogout) {
-        linkLogin.style.display = 'none';      
-        linkPerfil.style.display = '';   
-        linkLogout.style.display = '';   
+    if (sesionActiva === 'true' && linkLogin) {
+        linkLogin.style.display = 'none'; 
+        if (linkLogout) linkLogout.style.display = ''; 
+        
+        
+        if (usuarioActual && usuarioActual.rol === 'admin') {
+            if (linkAdmin) linkAdmin.style.display = ''; 
+        } else {
+            if (linkPerfil) linkPerfil.style.display = '';   
+        }
     }
 }
 
 function cerrarSesion() {
-    // Borramos la sesión y los datos del usuario logueado
+    
     localStorage.removeItem('sesionOlimpo');
     localStorage.removeItem('usuarioLogueado');
     window.location.href = 'index.html';
 }
 
-// Inicializador
+
 document.addEventListener('DOMContentLoaded', () => {
     revisarSesion();
 
@@ -119,46 +143,80 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnLogout) {
         btnLogout.addEventListener('click', cerrarSesion);
     }
+
+   
+    if (localStorage.getItem('sesionOlimpo') === 'true') {
+        rellenarTarjeta();
+    }
 });
 
 
-// Rellenar datos de la tarjeta
-
+// ==========================================
+// 4. RELLENAR DATOS DE LA TARJETA DEL PERFIL
+// ==========================================
 function rellenarTarjeta(){
-    const datosUsuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'))
-    const nombre = datosUsuarioLogueado.nombre
-    const correo = datosUsuarioLogueado.correo
-    const plan = datosUsuarioLogueado.plan
+    const datosUsuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
+    
+    
+    if(!datosUsuarioLogueado) return; 
+
+    const nombre = datosUsuarioLogueado.nombre;
+    const correo = datosUsuarioLogueado.correo;
+    const plan = datosUsuarioLogueado.plan || "Sin Plan Activo";
 
     if(document.getElementById('texto-nombre')){
-        document.getElementById('texto-nombre').textContent = nombre
-        document.getElementById('texto-correo').textContent = correo
-        document.getElementById('texto-plan').textContent = plan.toUpperCase()
+        document.getElementById('texto-nombre').textContent = nombre;
+        document.getElementById('texto-correo').textContent = correo;
+        
+        if (document.getElementById('texto-plan')) {
+            document.getElementById('texto-plan').textContent = plan.toUpperCase();
+        }
 
         if(plan === "Sin Plan Activo"){
-            document.getElementById('badgeEstado').textContent = 'Socio Inactivo'
-            document.getElementById('badgeEstado').style.background = "#e800004b"
-            document.getElementById('badgeEstado').style.border = "1px solid #E80000"
-            document.getElementById('badgeEstado').style.color = "#E80000"
+            document.getElementById('badgeEstado').textContent = 'Socio Inactivo';
+            document.getElementById('badgeEstado').style.background = "#e800004b";
+            document.getElementById('badgeEstado').style.border = "1px solid #E80000";
+            document.getElementById('badgeEstado').style.color = "#E80000";
             
-            document.getElementById('texto-vencimiento').style.visibility = 'hidden'
-            document.getElementById('texto-estado').style.color = "#E80000"
-            document.getElementById('texto-estado').textContent = 'INACTIVO'
+            document.getElementById('texto-vencimiento').style.visibility = 'hidden';
+            document.getElementById('texto-estado').style.color = "#E80000";
+            document.getElementById('texto-estado').textContent = 'INACTIVO';
 
         } else {
-            document.getElementById('badgeEstado').textContent = 'Socio Activo'
-            document.getElementById('badgeEstado').style.background = "#129b3a33"
-            document.getElementById('badgeEstado').style.border = "1px solid #129b3a"
-            document.getElementById('badgeEstado').style.color = "#129b3a"
+            document.getElementById('badgeEstado').textContent = 'Socio Activo';
+            document.getElementById('badgeEstado').style.background = "#129b3a33";
+            document.getElementById('badgeEstado').style.border = "1px solid #129b3a";
+            document.getElementById('badgeEstado').style.color = "#129b3a";
+        }
+
+        // ==========================================
+        // SECCIÓN DE INYECCIÓN DE RESERVAS
+        // ==========================================
+        const contenedorReservas = document.getElementById('lista-reservas');
+        
+        if (contenedorReservas) {
+            
+            let historialReservas = JSON.parse(localStorage.getItem('reservasOlimpo')) || [];
+            
+            
+            let misReservas = historialReservas.filter(reserva => reserva.correo === correo);
+            
+           
+            contenedorReservas.innerHTML = '';
+            
+            
+            if (misReservas.length === 0) {
+                contenedorReservas.innerHTML = '<span class="etiqueta-dato">No tienes clases reservadas aún.</span>';
+            } else {
+                misReservas.forEach(reserva => {
+                    contenedorReservas.innerHTML += `
+                        <div class="fila-dato" style="border-left: 3px solid #129b3a; padding-left: 10px; margin-bottom: 10px; display: flex; flex-direction: column;">
+                            <span class="valor-dato" style="color: #e9c009;">${reserva.clase}</span>
+                            <span class="etiqueta-dato" style="font-size: 12px;">Generada el: ${reserva.fechaReserva}</span>
+                        </div>
+                    `;
+                });
+            }
         }
     }
 }
-
-if(!localStorage.getItem('sesionOlimpo')){
-    console.log("Sin perfil logueado")
-} else {
-    rellenarTarjeta()
-}
-
-
-

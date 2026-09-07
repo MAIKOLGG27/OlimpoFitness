@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Olimpo Fitness</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Aquí se inyecta el menú automáticamente -->
+    <header id="barra-navegacion"></header>
+    <script src="scripts/barraNav.js"></script>
+
+    <main class="contenedor-reservas">
+        <div class="encabezado-planes">
+            <h1 class="titulo-principal-planes">RESERVA TU CLASE</h1>
+            <p class="subtitulo-sedes">Asegura tu cupo en nuestras disciplinas. Capacidad limitada.</p>
+        </div>
+
+        <!-- Grilla del Horario -->
+        <div class="grilla-horarios">
+            
+            <!-- LUNES -->
+            <div class="dia-horario">
+                <h3 class="titulo-dia">LUNES</h3>
+                
+                <div class="tarjeta-clase">
+                    <h4>Crossfit</h4>
+                    <p class="hora-clase">09:00 - 10:00</p>
+                    <p class="profe-clase">Prof: Carlos M.</p>
+                    <!-- Al hacer clic, enviamos el nombre de la clase a JS -->
+                    <button class="btn-reservar" onclick="reservarClase('Crossfit - Lunes 09:00')">RESERVAR</button>
+                </div>
+
+                <div class="tarjeta-clase">
+                    <h4>Spinning</h4>
+                    <p class="hora-clase">18:00 - 19:00</p>
+                    <p class="profe-clase">Prof: Andrea S.</p>
+                    <button class="btn-reservar" onclick="reservarClase('Spinning - Lunes 18:00')">RESERVAR</button>
+                </div>
+            </div>
+
+            <!-- MIÉRCOLES -->
+            <div class="dia-horario">
+                <h3 class="titulo-dia">MIÉRCOLES</h3>
+                
+                <div class="tarjeta-clase">
+                    <h4>Yoga</h4>
+                    <p class="hora-clase">10:00 - 11:00</p>
+                    <p class="profe-clase">Prof: Valeria T.</p>
+                    <button class="btn-reservar" onclick="reservarClase('Yoga - Miércoles 10:00')">RESERVAR</button>
+                </div>
+
+                <div class="tarjeta-clase">
+                    <h4>Crossfit</h4>
+                    <p class="hora-clase">19:00 - 20:00</p>
+                    <p class="profe-clase">Prof: Carlos M.</p>
+                    <button class="btn-reservar" onclick="reservarClase('Crossfit - Miércoles 19:00')">RESERVAR</button>
+                </div>
+            </div>
+
+            <!-- VIERNES -->
+            <div class="dia-horario">
+                <h3 class="titulo-dia">VIERNES</h3>
+                
+                <div class="tarjeta-clase">
+                    <h4>Boxeo</h4>
+                    <p class="hora-clase">11:00 - 12:30</p>
+                    <p class="profe-clase">Prof: Luis F.</p>
+                    <button class="btn-reservar" onclick="reservarClase('Boxeo - Viernes 11:00')">RESERVAR</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Conectamos el script exclusivo de reservas -->
+    <script src="scripts/scriptReservas.js"></script>
+</body>
+</html>
